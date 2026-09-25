@@ -3,7 +3,7 @@ import Image from "next/image";
 const flavours = [
   { name: "Vanilla", img: "/cookies/vanilla.png" },
   { name: "Almond", img: "/cookies/almond.png" },
-  { name: "idk", img: "/cookies/idk.png" }, // nombre definitivo?
+  { name: "idk", img: "/cookies/vainilla.png" },
   { name: "Chocolate", img: "/cookies/chocolate.png" },
 ];
 

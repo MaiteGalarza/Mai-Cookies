@@ -1,11 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cookie-dark: #5a2a17;  /* marrón de fondo: CAMBIAR */
-  --color-cookie-light: #ffcfb0; /* durazno claro: CAMBIAR */
+  --color-cookie-dark: #632715;   /* fondo oscuro */
+  --color-cookie-orange: #f9a91f; /* naranja principal (botones, acentos) */
+  --color-cookie-gold: #ffc65e;   /* dorado (acentos secundarios) */
+  --color-cookie-light: #fde5cf;  /* crema claro (fondos claros, texto sobre oscuro) */
   --font-display: var(--font-fredoka), sans-serif;
 }
 
 body {
   background: var(--color-cookie-dark);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 7s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-slow {
+    animation: none;
+  }
 }
