@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { Fredoka } from "next/font/google";
 import "./globals.css";
 
-// Cambiá la fuente acá si usás otra
-const fredoka = Fredoka({ subsets: ["latin"], variable: "--font-fredoka" });
+const fredoka = Fredoka({
+  subsets: ["latin"],
+  variable: "--font-fredoka",
+});
 
 export const metadata: Metadata = {
   title: "Mai Cookies",
@@ -16,8 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
-      <body className={`${fredoka.variable} font-display`}>{children}</body>
+    <html lang="en">
+      <body className={`${fredoka.variable} font-display`}>
+        {children}
+      </body>
     </html>
   );
 }
