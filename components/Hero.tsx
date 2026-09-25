@@ -9,7 +9,7 @@ export default function Hero() {
         alt=""
         width={220}
         height={220}
-        className="animate-float absolute -left-10 top-20 w-32 sm:-left-12 sm:w-44"
+        className="animate-float absolute left-4 top-20 w-32 sm:left-0 sm:w-44"
       />
 
       <Image
@@ -17,7 +17,7 @@ export default function Hero() {
         alt=""
         width={220}
         height={220}
-        className="animate-float-slow absolute -right-10 top-12 w-28 sm:-right-12 sm:w-40"
+        className="animate-float-slow absolute right-4 top-12 w-28 sm:right-0 sm:w-40"
       />
 
       <div className="relative z-10">
