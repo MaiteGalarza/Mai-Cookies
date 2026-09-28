@@ -23,9 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${jua.variable} ${varela.variable} font-display`}>
-        {children}
-      </body>
+      <body className={`${jua.variable} ${varela.variable}`}>{children}</body>
     </html>
   );
 }

@@ -15,8 +15,8 @@ export default function Motivation() {
       <Image
         src="/cookies/motivation-1.png"
         alt=""
-        width={500}
-        height={500}
+        width={220}
+        height={220}
         className="animate-float-slow absolute -right-10 bottom-0 w-28 sm:-right-12 sm:w-40"
       />
 

@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Flavours from "@/components/Flavours";
 import Motivation from "@/components/Motivation";
@@ -6,12 +7,15 @@ import Cta from "@/components/Cta";
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <Flavours />
-      <Motivation />
-      <Testimonials />
-      <Cta />
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <Flavours />
+        <Motivation />
+        <Testimonials />
+        <Cta />
+      </main>
+    </>
   );
 }

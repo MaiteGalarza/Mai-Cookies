@@ -35,6 +35,15 @@ export default function Hero() {
         </a>
       </div>
 
+      {/* Cookie asomando detrás de la onda: va ANTES del <Wave> para que la onda la tape de abajo */}
+      <Image
+        src="/cookies/hero-3.png"
+        alt=""
+        width={220}
+        height={220}
+        className="animate-float-slow absolute bottom-0 left-[55%] w-44 sm:w-60 lg:w-80"
+      />
+
       <Wave
         className="bottom-0 h-10 text-cookie-light sm:h-14"
       />
