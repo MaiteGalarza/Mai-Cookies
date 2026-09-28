@@ -75,15 +75,8 @@ export default function Cta() {
           <span className="text-4xl text-cookie-orange">●</span>
         </div>
 
-        {/*
-          "Mai Cookies" gigante de abajo: por ahora es texto de relleno.
-          Si tenés el wordmark como imagen, reemplazá este <p> por:
-          <Image src="/wordmark.svg" alt="Mai Cookies" width={1200} height={300}
-            className="relative z-10 mx-auto block h-auto w-full max-w-5xl translate-y-[10%]" />
-        */}
-        <p className="relative z-10 mx-auto max-w-5xl translate-y-[10%] text-center text-[clamp(3.5rem,15vw,12rem)] font-bold leading-[0.85] text-cookie-orange">
-          Mai Cookies
-        </p>
+       
+        <Image src="/wordmark.png" alt="Mai Cookies" width={1200} height={300} />
       </footer>
     </>
   );
