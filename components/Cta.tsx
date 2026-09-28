@@ -6,24 +6,33 @@ export default function Cta() {
     <>
       <section
         id="order"
-        className="relative overflow-hidden bg-cookie-orange px-6 pb-24 pt-16 text-center text-cookie-dark sm:pb-28 sm:pt-20"
+        className="relative overflow-x-clip bg-cookie-orange px-6 text-cookie-light"
       >
-        <Wave
-          flip
-          className="top-0 h-8 text-cookie-dark sm:h-10"
-        />
+        <Wave flip className="-top-px h-8 text-cookie-dark sm:h-10" />
 
-        <div className="relative mx-auto flex min-h-[360px] max-w-6xl items-center justify-center">
+        {/* Todo el armado vive en este contenedor, así no se desparrama en pantallas grandes */}
+        <div className="relative mx-auto min-h-[22rem] max-w-5xl pb-24 pt-14 sm:min-h-[26rem] sm:pb-28 sm:pt-20 lg:min-h-[29rem]">
+          {/* Cookie chica: esquina superior derecha, pisa la onda de arriba */}
           <Image
-            src="/cookies/cta-cookie.png"
+            src="/cookies/cta-1.png"
             alt=""
-            width={360}
-            height={360}
-            className="animate-float absolute -bottom-20 -left-28 w-64 sm:-left-20 sm:w-80 lg:-left-10"
+            width={160}
+            height={160}
+            className="animate-float-slow absolute -top-6 -right-[3%] z-20 w-[18%] max-w-[8rem]"
           />
 
-          <div className="relative z-10 max-w-md">
-            <h2 className="text-3xl font-bold sm:text-4xl">
+          {/* Cookie grande: sale por la izquierda y pisa la onda de abajo */}
+          <Image
+            src="/cookies/cta-1.png"
+            alt=""
+            width={420}
+            height={420}
+            className="animate-float absolute -bottom-6 -left-[12%] z-20 w-[42%] max-w-[22rem]"
+          />
+
+          {/* Texto + botón, a la derecha de la cookie */}
+          <div className="relative z-10 ml-auto w-[54%] text-left">
+            <h2 className="text-2xl font-bold sm:text-4xl lg:text-5xl">
               Join our family,
               <br />
               order now!
@@ -31,41 +40,50 @@ export default function Cta() {
 
             <a
               href="#order"
-              className="mt-6 inline-block rounded-full bg-cookie-dark px-7 py-2.5 text-sm font-semibold text-cookie-light transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg hover:shadow-cookie-dark/30 active:translate-y-0 active:scale-95"
+              className="group mt-5 inline-flex items-center gap-2 rounded-full bg-cookie-light px-5 py-2 text-sm font-semibold text-cookie-dark transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg hover:shadow-cookie-dark/30 active:translate-y-0 active:scale-95 sm:px-7 sm:py-2.5"
             >
               Go order
+              <span
+                aria-hidden
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              >
+                →
+              </span>
             </a>
-            <Image
-              src="/logo.svg"
-              alt="Mai Cookies"
-              width={400}
-              height={120}
-              className="mx-auto w-56 sm:w-72"
-            />
           </div>
 
+          {/* Personaje corriendo (tu logo.svg): abajo a la derecha, cruza la onda */}
           <Image
-            src="/cookies/cta-1.png"
-            alt=""
-            width={180}
-            height={180}
-            className="absolute bottom-0 -right-8 w-32 sm:right-0 sm:w-40"
+            src="/logo.svg"
+            alt="Mai Cookies mascot"
+            width={200}
+            height={230}
+            className="animate-float-slow absolute -bottom-8 right-[2%] z-20 w-[24%] max-w-[12rem]"
           />
         </div>
 
-        <Wave
-          className="bottom-0 h-8 text-cookie-dark sm:h-10"
-        />
+        <Wave className="-bottom-px h-8 text-cookie-dark sm:h-10" />
       </section>
 
-      <footer className="relative overflow-hidden bg-cookie-dark px-6 pb-8 pt-12 text-cookie-light">
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-around opacity-80">
+      <footer className="relative -mt-px overflow-hidden bg-cookie-dark px-6 pt-16 text-cookie-light sm:pt-24">
+        {/* Puntitos de relleno: reemplazalos por los doodles del diseño cuando los tengas */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 flex justify-around opacity-80">
           <span className="text-4xl text-cookie-orange">●</span>
           <span className="text-3xl text-cookie-gold">●</span>
           <span className="text-5xl text-cookie-orange">●</span>
           <span className="text-3xl text-cookie-gold">●</span>
           <span className="text-4xl text-cookie-orange">●</span>
         </div>
+
+        {/*
+          "Mai Cookies" gigante de abajo: por ahora es texto de relleno.
+          Si tenés el wordmark como imagen, reemplazá este <p> por:
+          <Image src="/wordmark.svg" alt="Mai Cookies" width={1200} height={300}
+            className="relative z-10 mx-auto block h-auto w-full max-w-5xl translate-y-[10%]" />
+        */}
+        <p className="relative z-10 mx-auto max-w-5xl translate-y-[10%] text-center text-[clamp(3.5rem,15vw,12rem)] font-bold leading-[0.85] text-cookie-orange">
+          Mai Cookies
+        </p>
       </footer>
     </>
   );
