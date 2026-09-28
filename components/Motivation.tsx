@@ -5,7 +5,7 @@ export default function Motivation() {
   return (
     <section className="relative overflow-hidden bg-cookie-dark px-8 py-16 text-center text-cookie-light sm:py-20">
       <Image
-        src="/cookies/motivation-1.svg"
+        src="/cookies/motivation-2.png"
         alt=""
         width={220}
         height={220}
@@ -13,10 +13,10 @@ export default function Motivation() {
       />
 
       <Image
-        src="/cookies/motivation-2.svg"
+        src="/cookies/motivation-1.png"
         alt=""
-        width={220}
-        height={220}
+        width={500}
+        height={500}
         className="animate-float-slow absolute -right-10 bottom-0 w-28 sm:-right-12 sm:w-40"
       />
 

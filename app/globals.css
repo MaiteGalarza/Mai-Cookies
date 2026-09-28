@@ -1,37 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cookie-dark: #632713;
-  --color-cookie-orange: #ec6426;
-  --color-cookie-gold: #f8a91f;
-  --color-cookie-light: #fde3cf;
-
-  --font-display: var(--font-fredoka), sans-serif;
-}
-
-html {
-  scroll-behavior: smooth;
+  --color-cookie-dark: #632713;   /* dark background */
+  --color-cookie-orange: #ec6426; /* main orange (buttons, accents) */
+  --color-cookie-gold: #f8a91f;   /* gold (secondary accents) */
+  --color-cookie-light: #fde3cf;  /* light cream (light backgrounds, text over dark) */
+  --font-display: var(--font-jua), sans-serif;     /* main: Jua */
+  --font-body: var(--font-varela), sans-serif;     /* complementary: Varela Round */
 }
 
 body {
-  margin: 0;
   background: var(--color-cookie-dark);
-  color: var(--color-cookie-light);
-}
-
-* {
-  box-sizing: border-box;
+  /* Jua only has one weight: avoid browsers faking bold on it */
+  font-synthesis-weight: none;
 }
 
 @keyframes float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
 .animate-float {

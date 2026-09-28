@@ -1,5 +1,18 @@
 import Image from "next/image";
 import Wave from "./Wave";
+import Wordmark from "./Wordmark";
+
+// Stickers around the wordmark. Drop your Figma exports in public/stickers/
+// (same names, or change src). left/top/width are % of the footer container.
+const stickers = [
+  { src: "/stickers/sticker-1.svg", left: "3%", top: "6%", width: "11%", rotate: -12 },
+  { src: "/stickers/sticker-2.svg", left: "22%", top: "0%", width: "9%", rotate: 8 },
+  { src: "/stickers/sticker-3.svg", left: "43%", top: "-2%", width: "10%", rotate: -6 },
+  { src: "/stickers/sticker-4.svg", left: "63%", top: "2%", width: "9%", rotate: 14 },
+  { src: "/stickers/sticker-5.svg", left: "84%", top: "5%", width: "11%", rotate: -8 },
+  { src: "/stickers/sticker-6.svg", left: "4%", top: "58%", width: "7%", rotate: 10 },
+  { src: "/stickers/sticker-7.svg", left: "93%", top: "55%", width: "7%", rotate: -14 },
+];
 
 export default function Cta() {
   return (
@@ -10,9 +23,9 @@ export default function Cta() {
       >
         <Wave flip className="-top-px h-8 text-cookie-dark sm:h-10" />
 
-        {/* Todo el armado vive en este contenedor, así no se desparrama en pantallas grandes */}
+        {/* Everything lives in this container so it doesn't sprawl on large screens */}
         <div className="relative mx-auto min-h-[22rem] max-w-5xl pb-24 pt-14 sm:min-h-[26rem] sm:pb-28 sm:pt-20 lg:min-h-[29rem]">
-          {/* Cookie chica: esquina superior derecha, pisa la onda de arriba */}
+          {/* Small cookie: top-right corner, overlaps the wave above */}
           <Image
             src="/cookies/cta-1.png"
             alt=""
@@ -21,7 +34,7 @@ export default function Cta() {
             className="animate-float-slow absolute -top-6 -right-[3%] z-20 w-[18%] max-w-[8rem]"
           />
 
-          {/* Cookie grande: sale por la izquierda y pisa la onda de abajo */}
+          {/* Big cookie: bleeds off the left edge, overlaps the wave below */}
           <Image
             src="/cookies/cta-1.png"
             alt=""
@@ -30,7 +43,7 @@ export default function Cta() {
             className="animate-float absolute -bottom-6 -left-[12%] z-20 w-[42%] max-w-[22rem]"
           />
 
-          {/* Texto + botón, a la derecha de la cookie */}
+          {/* Text + button, to the right of the cookie */}
           <div className="relative z-10 ml-auto w-[54%] text-left">
             <h2 className="text-2xl font-bold sm:text-4xl lg:text-5xl">
               Join our family,
@@ -52,7 +65,7 @@ export default function Cta() {
             </a>
           </div>
 
-          {/* Personaje corriendo (tu logo.svg): abajo a la derecha, cruza la onda */}
+          {/* Running mascot (your logo.svg): bottom-right, crosses the wave */}
           <Image
             src="/logo.svg"
             alt="Mai Cookies mascot"
@@ -65,18 +78,30 @@ export default function Cta() {
         <Wave className="-bottom-px h-8 text-cookie-dark sm:h-10" />
       </section>
 
-      <footer className="relative -mt-px overflow-hidden bg-cookie-dark px-6 pt-16 text-cookie-light sm:pt-24">
-        {/* Puntitos de relleno: reemplazalos por los doodles del diseño cuando los tengas */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 flex justify-around opacity-80">
-          <span className="text-4xl text-cookie-orange">●</span>
-          <span className="text-3xl text-cookie-gold">●</span>
-          <span className="text-5xl text-cookie-orange">●</span>
-          <span className="text-3xl text-cookie-gold">●</span>
-          <span className="text-4xl text-cookie-orange">●</span>
-        </div>
+      <footer className="relative -mt-px overflow-hidden bg-cookie-dark px-6 pt-8 text-cookie-light sm:pt-12">
+        <div className="relative mx-auto w-full max-w-5xl pt-20 sm:pt-28">
+          {stickers.map((st, i) => (
+            <Image
+              key={st.src}
+              src={st.src}
+              alt=""
+              aria-hidden
+              width={120}
+              height={120}
+              style={{
+                left: st.left,
+                top: st.top,
+                width: st.width,
+                rotate: `${st.rotate}deg`,
+              }}
+              className={`pointer-events-none absolute z-0 h-auto ${
+                i % 2 ? "animate-float-slow" : "animate-float"
+              }`}
+            />
+          ))}
 
-       
-        <Image src="/wordmark.png" alt="Mai Cookies" width={1200} height={300} />
+          <Wordmark />
+        </div>
       </footer>
     </>
   );

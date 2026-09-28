@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Fredoka } from "next/font/google";
+import { Jua, Varela_Round } from "next/font/google";
 import "./globals.css";
 
-const fredoka = Fredoka({
+// Main font (headings, buttons, logo style)
+const jua = Jua({ subsets: ["latin"], weight: "400", variable: "--font-jua" });
+// Complementary font (long text)
+const varela = Varela_Round({
   subsets: ["latin"],
-  variable: "--font-fredoka",
+  weight: "400",
+  variable: "--font-varela",
 });
 
 export const metadata: Metadata = {
@@ -19,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${fredoka.variable} font-display`}>
+      <body className={`${jua.variable} ${varela.variable} font-display`}>
         {children}
       </body>
     </html>
