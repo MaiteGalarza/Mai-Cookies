@@ -2,8 +2,6 @@ import Image from "next/image";
 import Wave from "./Wave";
 import Wordmark from "./Wordmark";
 
-// Stickers around the wordmark. Drop your Figma exports in public/stickers/
-// (same names, or change src). left/top/width are % of the footer container.
 const stickers = [
   { src: "/stickers/sticker-1.svg", left: "3%", top: "6%", width: "11%", rotate: -12 },
   { src: "/stickers/sticker-2.svg", left: "22%", top: "0%", width: "9%", rotate: 8 },
@@ -23,9 +21,8 @@ export default function Cta() {
       >
         <Wave flip className="-top-px h-8 text-cookie-dark sm:h-10" />
 
-        {/* Everything lives in this container so it doesn't sprawl on large screens */}
         <div className="relative mx-auto min-h-[22rem] max-w-5xl pb-24 pt-14 sm:min-h-[26rem] sm:pb-28 sm:pt-20 lg:min-h-[29rem]">
-          {/* Small cookie: top-right corner, overlaps the wave above */}
+          
           <Image
             src="/cookies/cta-1.png"
             alt=""
@@ -34,7 +31,6 @@ export default function Cta() {
             className="animate-float-slow absolute -top-6 -right-[3%] z-20 w-[18%] max-w-[8rem]"
           />
 
-          {/* Big cookie: bleeds off the left edge, overlaps the wave below */}
           <Image
             src="/cookies/cta-1.png"
             alt=""
@@ -43,7 +39,6 @@ export default function Cta() {
             className="animate-float absolute -bottom-6 -left-[12%] z-20 w-[42%] max-w-[22rem]"
           />
 
-          {/* Text + button, to the right of the cookie */}
           <div className="relative z-10 ml-auto w-[54%] text-left">
             <h2 className="text-2xl font-bold sm:text-4xl lg:text-5xl">
               Join our family,
@@ -65,7 +60,6 @@ export default function Cta() {
             </a>
           </div>
 
-          {/* Running mascot (your logo.svg): bottom-right, crosses the wave */}
           <Image
             src="/logo.svg"
             alt="Mai Cookies mascot"

@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-cookie-dark">
       <div className="relative mx-auto flex max-w-6xl items-center justify-center px-5 py-3">
-        {/* Logo: guardalo como public/navbar-logo.png (fondo transparente) */}
+
         <a href="#" aria-label="Mai Cookies, back to top">
           <Image
             src="/Navbar-logo.png"
@@ -21,7 +21,6 @@ export default function Navbar() {
           />
         </a>
 
-        {/* Hamburguesa: se transforma en X al tocarla */}
         <button
           type="button"
           aria-label={open ? "Close menu" : "Open menu"}

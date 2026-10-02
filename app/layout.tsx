@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { Jua, Varela_Round } from "next/font/google";
 import "./globals.css";
 
-// Main font (headings, buttons, logo style)
+
 const jua = Jua({ subsets: ["latin"], weight: "400", variable: "--font-jua" });
-// Complementary font (long text)
+
 const varela = Varela_Round({
   subsets: ["latin"],
   weight: "400",

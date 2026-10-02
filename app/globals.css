@@ -1,27 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cookie-dark: #632713;   /* dark background */
-  --color-cookie-orange: #ec6426; /* main orange (buttons, accents) */
-  --color-cookie-gold: #f8a91f;   /* gold (secondary accents) */
-  --color-cookie-light: #fde3cf;  /* light cream (light backgrounds, text over dark) */
+  --color-cookie-dark: #632713;   
+  --color-cookie-orange: #ec6426; 
+  --color-cookie-gold: #f8a91f;   
+  --color-cookie-light: #fde3cf;  
 }
 
-/* "inline" porque estas fuentes apuntan a variables de next/font:
-   sin esto Tailwind las lee desde :root, no las encuentra y la fuente no se aplica */
+
 @theme inline {
-  --font-display: var(--font-jua), sans-serif;     /* main: Jua */
-  --font-body: var(--font-varela), sans-serif;     /* complementary: Varela Round */
+  --font-display: var(--font-jua), sans-serif;     
+  --font-body: var(--font-varela), sans-serif;     
 }
 
 body {
   background: var(--color-cookie-dark);
-  font-family: var(--font-varela), sans-serif; /* texto: Varela Round */
-  /* Jua only has one weight: avoid browsers faking bold on it */
+  font-family: var(--font-varela), sans-serif; 
   font-synthesis-weight: none;
 }
 
-/* títulos y botones: Jua */
 h1,
 h2,
 h3,

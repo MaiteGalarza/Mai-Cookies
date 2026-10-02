@@ -60,7 +60,6 @@ export default function Flavours() {
         ))}
       </ul>
 
-      {/* Borde ondulado de abajo: el marrón de Motivation "sube" sobre el crema */}
       <Wave className="-bottom-px h-8 text-cookie-dark sm:h-10" />
     </section>
   );

@@ -35,7 +35,7 @@ export default function Hero() {
         </a>
       </div>
 
-      {/* Cookie asomando detrás de la onda: va ANTES del <Wave> para que la onda la tape de abajo */}
+
       <Image
         src="/cookies/hero-3.png"
         alt=""
